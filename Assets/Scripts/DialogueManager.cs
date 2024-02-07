@@ -15,21 +15,35 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject buttonHolder;
     [SerializeField] private float textDisplaySpeed = 0.09f;
 
+
+
     private List<DialogueString> dialogueList;
+    private List<Button> interactibleObjectList;
 
     private int currentDialogueIndex = 0 ;
 
     private bool optionSelected = false;
+    private bool instantTextDisplay = false;
 
     private void Start()
     {
         textPoppa.SetActive(false);
     }
 
-    public void DialogueStart(List<DialogueString> textToDisplay)
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
+        {
+            instantTextDisplay = !instantTextDisplay;
+        }
+    }
+
+    public void DialogueStart(List<DialogueString> dialogueString, List<Button> buttonList)
     {
         textPoppa.SetActive(true);
-        dialogueList = textToDisplay;
+        interactibleObjectList = buttonList;
+        dialogueList = dialogueString;
+        IsButtonListClickable(false, interactibleObjectList);
         currentDialogueIndex = 0;
         DisplayAnswerButtons(false);
         StartCoroutine(DisplayDialogue());
@@ -77,8 +91,15 @@ public class DialogueManager : MonoBehaviour
         textHolder.text = "";
         foreach (char letter in lineText.ToCharArray())
         {
-            textHolder.text += letter;
-            yield return new WaitForSeconds(textDisplaySpeed);
+            if (instantTextDisplay)
+            {
+                textHolder.text += letter;
+            }
+            else
+            {
+                textHolder.text += letter;
+                yield return new WaitForSeconds(textDisplaySpeed);
+            }
         } 
         if (!dialogueList[currentDialogueIndex].isQuestion)
         {
@@ -104,5 +125,13 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         textHolder.text = "";
         textPoppa.SetActive(false);
+        IsButtonListClickable(true, interactibleObjectList);
+    }
+    private void IsButtonListClickable(bool isClickable, List<Button> buttonList)
+    {
+        foreach (Button button in buttonList)
+        {
+            button.interactable = isClickable;
+        }
     }
 }

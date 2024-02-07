@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
     [SerializeField] private GameObject player;
     [SerializeField] private bool isTriggeredOnStart;
+    public List<Button> buttonsToDisable = new List<Button>() ;
     private bool hasAlreadyBeenSaid = false;
     public void OnButtonPress()
     {
@@ -24,7 +26,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(!hasAlreadyBeenSaid)
             {
-                player.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
+                player.GetComponent<DialogueManager>().DialogueStart(dialogueStrings, buttonsToDisable);
                 hasAlreadyBeenSaid = true;
             }
         
@@ -48,5 +50,5 @@ public class DialogueString
     // Events
     [Header("Trigger Events")]
     public UnityEvent startEvent;
-    public UnityEvent endEvent;
+    public UnityEvent endEvent; 
 }
