@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Event;
+using UnityEngine.Events;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>;
+    [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
+    [SerializeField] private GameObject player;
+    private bool hasAlreadyBeenSaid = false;
+    public void OnButtonPress()
+    {
+        if(!hasAlreadyBeenSaid)
+        {
+            player.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
+            hasAlreadyBeenSaid = true;
+        }
+    }
 }
 [System.Serializable]
 public class DialogueString
@@ -18,8 +28,8 @@ public class DialogueString
     // change to an empty list where you can add answer in the editor with 4 max options
     public string answerOption1;
     public string answerOption2;
-    public int answerOption1jumpIndex;
-    public int answerOption2jumpIndex;
+    public int option1IsSelectedJumpToIndex;
+    public int option2IsSelectedJumpToIndex;
 
     // Events
     [Header("Trigger Events")]
