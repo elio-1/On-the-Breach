@@ -481,6 +481,7 @@ MonoBehaviour:
   textHolder: {fileID: 1530762220}
   optionButton1: {fileID: 1696285673}
   optionButton2: {fileID: 1042170918}
+  buttonHolder: {fileID: 0}
   textDisplaySpeed: 0.09
 --- !u!4 &657235579
 Transform:
@@ -546,8 +547,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueStrings:
-  - text: 
+  - text: Hello ! Welcome to the test!!!
     isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: This is a test to test the text function!!!
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: Do you enjoy it so far ???
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: Yes, this is fun!
+    answerOption2: No, Im not impressed
+    option1IsSelectedJumpToIndex: 3
+    option2IsSelectedJumpToIndex: 4
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: Thank you very much!!
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: HOW DARE YOU !
+    isEndOfDialogue: 1
     isQuestion: 0
     answerOption1: 
     answerOption2: 

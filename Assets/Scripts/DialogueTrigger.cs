@@ -7,16 +7,30 @@ public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
     [SerializeField] private GameObject player;
+    [SerializeField] private bool isTriggeredOnStart;
     private bool hasAlreadyBeenSaid = false;
     public void OnButtonPress()
     {
-        if(!hasAlreadyBeenSaid)
+        StartTheDialogue();
+    }
+    void Start()
+    {
+        if(isTriggeredOnStart)
         {
-            player.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
-            hasAlreadyBeenSaid = true;
+            StartTheDialogue();
         }
     }
+    private void StartTheDialogue()
+    {
+        if(!hasAlreadyBeenSaid)
+            {
+                player.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
+                hasAlreadyBeenSaid = true;
+            }
+        
+    }
 }
+// scriptable objects!!!!
 [System.Serializable]
 public class DialogueString
 {
