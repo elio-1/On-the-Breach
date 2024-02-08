@@ -7,15 +7,17 @@ using UnityEngine.UI;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueStringSO dialogueStringsSO;
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerGameObject;
     [SerializeField] private bool isTriggeredOnStart;
     [SerializeField] private bool canBeTriggeredMultipleTimes;
     public List<Button> buttonsToDisable = new List<Button>() ;
     [SerializeField] private bool hasAlreadyBeenSaid = false;
+    private Player player;
 
     public void OnButtonPress()
     {
         StartTheDialogue();
+        StoryProgress();
     }
     void Start()
     {
@@ -23,12 +25,13 @@ public class DialogueTrigger : MonoBehaviour
         {
             StartTheDialogue();
         }
+        player = playerGameObject.GetComponent<Player>();
     }
     private void StartTheDialogue()
     {
         if(!hasAlreadyBeenSaid)
             {
-                player.GetComponent<DialogueManager>().DialogueStart(dialogueStringsSO.dialogueStringsList, buttonsToDisable, gameObject);
+                playerGameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStringsSO.dialogueStringsList, buttonsToDisable, gameObject);
                 hasAlreadyBeenSaid = true;
             }
         
@@ -36,5 +39,9 @@ public class DialogueTrigger : MonoBehaviour
     public void CanBeTriggeredAgain()
     {
         hasAlreadyBeenSaid = !canBeTriggeredMultipleTimes;
+    }
+    public void StoryProgress()
+    {
+        player.ProgressStory();
     }
 }
