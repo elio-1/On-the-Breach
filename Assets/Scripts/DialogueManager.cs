@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject buttonHolder;
     [SerializeField] private float textDisplaySpeed = 0.09f;
 
-
+    private DialogueTrigger currentDialogueGameobject;
 
     private List<DialogueString> dialogueList;
     private List<Button> interactibleObjectList;
@@ -38,10 +38,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void DialogueStart(List<DialogueString> dialogueString, List<Button> buttonList)
+    public void DialogueStart(List<DialogueString> dialogueString, List<Button> buttonList, GameObject gameObject)
     {
         textPoppa.SetActive(true);
         interactibleObjectList = buttonList;
+        currentDialogueGameobject = gameObject.GetComponent<DialogueTrigger>();
         dialogueList = dialogueString;
         IsButtonListClickable(false, interactibleObjectList);
         currentDialogueIndex = 0;
@@ -126,6 +127,8 @@ public class DialogueManager : MonoBehaviour
         textHolder.text = "";
         textPoppa.SetActive(false);
         IsButtonListClickable(true, interactibleObjectList);
+        
+        currentDialogueGameobject.CanBeTriggeredAgain();
     }
     private void IsButtonListClickable(bool isClickable, List<Button> buttonList)
     {

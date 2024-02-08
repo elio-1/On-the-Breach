@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private bool canBeTriggeredMultipleTimes;
     public List<Button> buttonsToDisable = new List<Button>() ;
     [SerializeField] private bool hasAlreadyBeenSaid = false;
+
     public void OnButtonPress()
     {
         StartTheDialogue();
@@ -27,9 +28,13 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(!hasAlreadyBeenSaid)
             {
-                player.GetComponent<DialogueManager>().DialogueStart(dialogueStringsSO.dialogueStringsList, buttonsToDisable);
+                player.GetComponent<DialogueManager>().DialogueStart(dialogueStringsSO.dialogueStringsList, buttonsToDisable, gameObject);
                 hasAlreadyBeenSaid = true;
             }
+        
+    }
+    public void CanBeTriggeredAgain()
+    {
         hasAlreadyBeenSaid = !canBeTriggeredMultipleTimes;
     }
 }
