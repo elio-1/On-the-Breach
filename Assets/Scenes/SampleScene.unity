@@ -947,74 +947,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ab02bc99315804497584fc27249525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueStrings:
-  - text: Hello ! Welcome to the test!!!
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - text: This is a test to test the text function!!!
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - text: Do you enjoy it so far ???
-    isEndOfDialogue: 0
-    isQuestion: 1
-    answerOption1: Yes, this is fun!
-    answerOption2: No, Im not impressed
-    option1IsSelectedJumpToIndex: 3
-    option2IsSelectedJumpToIndex: 4
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - text: Thank you very much!!
-    isEndOfDialogue: 1
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - text: HOW DARE YOU !
-    isEndOfDialogue: 1
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
+  dialogueStringsSO: {fileID: 11400000, guid: 2ab115c9bab835a4a8c796f7bb533baa, type: 2}
   player: {fileID: 657235577}
   isTriggeredOnStart: 1
+  canBeTriggeredMultipleTimes: 0
   buttonsToDisable:
   - {fileID: 182346981}
   - {fileID: 450014355}
@@ -1245,35 +1181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ab02bc99315804497584fc27249525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueStrings:
-  - text: You just clicked on a button
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - text: Well done.
-    isEndOfDialogue: 1
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
+  dialogueStringsSO: {fileID: 11400000, guid: 13f3adcdc78d74842ba1aebc7ea9574f, type: 2}
   player: {fileID: 657235577}
   isTriggeredOnStart: 0
+  canBeTriggeredMultipleTimes: 1
   buttonsToDisable:
   - {fileID: 450014355}
 --- !u!224 &1360042310
@@ -1770,35 +1681,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ab02bc99315804497584fc27249525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueStrings:
-  - text: This is a button
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - text: Nice.
-    isEndOfDialogue: 1
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
+  dialogueStringsSO: {fileID: 11400000, guid: 40b82b3a227b2144fa448593a7947563, type: 2}
   player: {fileID: 657235577}
   isTriggeredOnStart: 0
+  canBeTriggeredMultipleTimes: 1
   buttonsToDisable:
   - {fileID: 182346981}
 --- !u!1 &2024681713
