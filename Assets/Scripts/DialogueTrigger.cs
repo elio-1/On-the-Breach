@@ -10,6 +10,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private GameObject playerGameObject;
     [SerializeField] private bool isTriggeredOnStart;
     [SerializeField] private bool canBeTriggeredMultipleTimes;
+    [SerializeField] private GameManager gameManager;
     public List<Button> buttonsToDisable = new List<Button>() ;
     [SerializeField] private bool hasAlreadyBeenSaid = false;
     private Player player;
@@ -43,5 +44,12 @@ public class DialogueTrigger : MonoBehaviour
     public void StoryProgress()
     {
         player.ProgressStory();
+    }
+    private void StartDialoguePage(int page){
+        if(!hasAlreadyBeenSaid)
+            {
+                playerGameObject.GetComponent<DialogueManager>().DialogueStart(gameManager.ChangeDialogueStringSO(page).dialogueStringsList, buttonsToDisable, gameObject);
+                hasAlreadyBeenSaid = true;
+            }
     }
 }
