@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageNumber: 2
   dialogueStringsList:
-  - text: this is the story
+  - text: 2 this is the story
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
@@ -27,7 +27,7 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: continuing to tell an interresting story
+  - text: 2 continuing to tell an interresting story
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
@@ -40,7 +40,7 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: continuing to tell an interresting story...
+  - text: 2 continuing to tell an interresting story...
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 

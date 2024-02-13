@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c4059f4072ec74a966577bbc868371, type: 3}
   m_Name: Story3
   m_EditorClassIdentifier: 
-  pageNumber: 2
+  pageNumber: 3
   dialogueStringsList:
-  - text: this is the story
+  - text: 3 this is the story
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
@@ -27,7 +27,7 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: continuing to tell an interresting story
+  - text: 3
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
@@ -40,7 +40,7 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: continuing to tell an interresting story...
+  - text: 3 story
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 

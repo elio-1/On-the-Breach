@@ -697,6 +697,7 @@ MonoBehaviour:
   effectSpeed: 2
   effectVeticalPwr: 0.05
   effectIntensity: 10
+  _textEffectSelection: 0
 --- !u!114 &308607206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,6 +1516,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 657235580}
+  dialogueStringList:
+  - {fileID: 11400000, guid: 86e7d35f2c9956d48982490c6fd5165f, type: 2}
+  - {fileID: 11400000, guid: 2dab2cf6f2446c74683ca347ede44578, type: 2}
+  - {fileID: 11400000, guid: 73a9cb6607bbed64fb7b27eb94b9b299, type: 2}
 --- !u!4 &878510607
 Transform:
   m_ObjectHideFlags: 0
@@ -2269,12 +2274,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1707391892}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: OnButtonPress
-        m_Mode: 1
+        m_MethodName: OnButtonPressChangePage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
