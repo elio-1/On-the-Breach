@@ -5,11 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 public class UIInvetoryItem : MonoBehaviour
 {
-[SerializeField] Image itemImage;
+[SerializeField] Sprite itemImage;
 [SerializeField] TMP_Text itemQuantity;
 public void InitializeItem(ItemSO itemSO)
 {
-    itemImage.sprite = itemSO.itemSprite;
+    itemImage = itemSO.itemSprite;
     itemQuantity.text = itemSO.itemCount.ToString();
 }
 }

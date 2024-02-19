@@ -3995,6 +3995,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6388449805235809376, guid: e15be590d8bdcd94b9741731b71d0c94, type: 3}
+      propertyPath: m_CellSize.x
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 6856686237265059342, guid: e15be590d8bdcd94b9741731b71d0c94, type: 3}
       propertyPath: m_Name
       value: Inventory
