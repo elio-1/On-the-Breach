@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+// Define the conditions in which a dialogue start
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueStringSO dialogueStringsSO;

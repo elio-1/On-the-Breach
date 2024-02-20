@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
+// handle the dialogues 
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private GameObject textPoppa;
@@ -32,6 +33,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        // display the text instaniously if input from player
         if(Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
         {
             instantTextDisplay = !instantTextDisplay;
@@ -87,6 +89,8 @@ public class DialogueManager : MonoBehaviour
         // optionButton1.interactable(isActive);
         // optionButton2.interactable(isActive);
     }
+
+    // type each char in the current line in the dialogue
     private IEnumerator TypeText(string lineText)
     {
         textHolder.text = "";
@@ -113,7 +117,7 @@ public class DialogueManager : MonoBehaviour
         currentDialogueIndex++;
     } 
 
-
+    // Navigate in the current dialogue to the right dialogue line 
     private void HandleOptionSelected(int jumpIndex)
     {
         optionSelected = true;
