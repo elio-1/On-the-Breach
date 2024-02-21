@@ -278,9 +278,10 @@ GameObject:
   - component: {fileID: 3351487981250369363}
   - component: {fileID: 6473301581251333314}
   - component: {fileID: 237219202151144302}
+  - component: {fileID: 7745921222330186324}
   m_Layer: 5
   m_Name: InventoryDescription
-  m_TagString: Untagged
+  m_TagString: InventoryDescription
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,6 +391,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &7745921222330186324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794450850370624150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6b56a3201ce2645bda5c4979a8370a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionImage: {fileID: 4947256072562412052}
+  descriptionTitle: {fileID: 2781525829250594482}
+  descriptionTextContent: {fileID: 2067671396679252176}
 --- !u!1 &2903812414053161035
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7830189, g: 0.7497775, b: 0.7497775, a: 1}
+  m_Color: {r: 0.7830189, g: 0.7497775, b: 0.7497775, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

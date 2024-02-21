@@ -15,6 +15,7 @@ public class UIInventory : MonoBehaviour
             UIInvetoryItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
             uiItem.InitializeItem(inventoryList[i]);
             uiItem.transform.SetParent(rectTransform);
+            uiItem.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
             itemsList.Add(uiItem);
         }
     }

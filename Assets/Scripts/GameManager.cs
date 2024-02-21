@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     {
         player.storyProgress = page;
     }
+
+    // take the page number and change the dialogues list that store ALL the dialogues in the game
     public DialogueStringSO ChangeDialogueStringSO(int page){
         ChangePageNumber(page);
         return dialogueStringList[page];
