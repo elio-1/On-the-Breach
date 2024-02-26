@@ -13,7 +13,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private bool canBeTriggeredMultipleTimes;
     private GameManager gameManager;
     public List<Button> buttonsToDisable = new List<Button>() ;
-    [SerializeField] private bool hasAlreadyBeenSaid = false;
+    private bool hasAlreadyBeenSaid = false;
     private Player player;
 
     public void OnButtonPress()

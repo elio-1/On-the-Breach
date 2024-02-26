@@ -9,6 +9,7 @@ public class UIInventory : MonoBehaviour
     List<UIInvetoryItem> itemsList = new List<UIInvetoryItem>();
     bool isInventoryActive = false;
 
+    // needs to be ACTIVE in scene in order to generate
     public void GenerateInventory(List<ItemSO> inventoryList)
     {
         if(!gameObject.activeInHierarchy)
