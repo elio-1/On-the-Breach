@@ -31,4 +31,16 @@ public class UIInventory : MonoBehaviour
         isInventoryActive = !isActiveAndEnabled;
         gameObject.SetActive(isInventoryActive);
     }
+    public void AddItemToInventory(ItemSO item){
+        if(!gameObject.activeInHierarchy)
+        {
+            ToggleInventory();
+        }
+        UIInvetoryItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+        uiItem.InitializeItem(item);
+        uiItem.transform.SetParent(rectTransform);
+        uiItem.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
+        itemsList.Add(uiItem);
+        ToggleInventory();
+    }
 }
