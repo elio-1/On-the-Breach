@@ -15,6 +15,7 @@ public class DialogueTrigger : MonoBehaviour
     public List<Button> buttonsToDisable = new List<Button>() ;
     private bool hasAlreadyBeenSaid = false;
     private Player player;
+    public AudioSource audioSource;
 
     public void OnButtonPress()
     {
@@ -34,6 +35,7 @@ public class DialogueTrigger : MonoBehaviour
         }
         player = playerGameObject.GetComponent<Player>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void StartTheDialogue()
     {
@@ -58,5 +60,11 @@ public class DialogueTrigger : MonoBehaviour
                 playerGameObject.GetComponent<DialogueManager>().DialogueStart(gameManager.ChangeDialogueStringSO(page).dialogueStringsList, buttonsToDisable, gameObject);
                 hasAlreadyBeenSaid = true;
             }
+    }
+
+    public void PlayAudioClip(AudioClip audioClip)
+    {
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }

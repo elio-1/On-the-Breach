@@ -58,6 +58,9 @@ public class DialogueManager : MonoBehaviour
         {
             DialogueString line = dialogueList[currentDialogueIndex];
             line.startEvent?.Invoke();
+            if (line.audioClip != null){
+                currentDialogueGameobject.PlayAudioClip(line.audioClip);
+            }   
             if (line.isQuestion)
             {
                 yield return StartCoroutine(TypeText(line.text));

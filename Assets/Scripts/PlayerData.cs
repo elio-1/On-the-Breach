@@ -7,8 +7,10 @@ using UnityEngine;
 public class PlayerData
 {
     public int storyProgress;
+    public int currentScene;
     public PlayerData(Player player)
     {
         storyProgress = player.storyProgress;
+        currentScene = player.currentScene;
     }
 }

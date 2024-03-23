@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageNumber: 1
   dialogueStringsList:
-  - text: "There we are Mr.Sato.  Here\u2019s the house you\u2019re gonna stay until
-      the negotiations are done. "
+  - text: There we are Mr.Sato.
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
@@ -28,6 +27,22 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
+    audioClip: {fileID: 8300000, guid: 7ffa6768cd27b4e4190dad401cf098fb, type: 3}
+  - text: "Here\u2019s the house you\u2019re gonna stay until the negotiations are
+      done. "
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    audioClip: {fileID: 0}
   - text: "There is no transportation in this area, so I will be your driver to the
       company\u2019s office, in Susami."
     isEndOfDialogue: 0
@@ -42,8 +57,9 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
+    audioClip: {fileID: 8300000, guid: c37a6c3d00d6bc640bdca95f26e3de3d, type: 3}
   - text: "If you have any technical issue, you can refer to the Janitor, he\u2019s
-      in charge of this place : water, electricity, laundry\u2026"
+      in charge of this place : water, electricity, laundry\u2026 "
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
@@ -56,6 +72,7 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
+    audioClip: {fileID: 0}
   - text: "He will also deliver your dinner every evening too, don\u2019t worry though,
       he is a very kind and discreet person and you should not cross path with him. "
     isEndOfDialogue: 0
@@ -70,20 +87,7 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: "He will also deliver your dinner every evening too, don\u2019t worry though,
-      he is a very kind and discreet person and you should not cross path with him. "
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
+    audioClip: {fileID: 0}
   - text: Tomorrow, he should have you the fax machine installed in the house.
     isEndOfDialogue: 0
     isQuestion: 0
@@ -97,7 +101,10 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: One last thing Mr.Sato, I advise you not to go on the beach.
+    audioClip: {fileID: 0}
+  - text: One last thing Mr.Sato, I advise you not to go on the beach. The water
+      sometimes can be rought, particularly in this place. Have a good rest Mr.Sato,
+      I will pick you up at 6:35am tomorrow.
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
@@ -110,22 +117,9 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: The water sometimes can be rought, particularly in this place. Have a good
-      rest Mr.Sato, I will pick you up at 6:35am tomorrow.
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    startEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endEvent:
-      m_PersistentCalls:
-        m_Calls: []
+    audioClip: {fileID: 8300000, guid: 6384ac6a2e54e404d9c0fe0a0144b75b, type: 3}
   - text: "\u2026Oh, I forgot !  The company had you a little present, it\u2019s
-      on the table. Enjoy the sea Mr.Sato!"
+      on the table."
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
@@ -138,3 +132,18 @@ MonoBehaviour:
     endEvent:
       m_PersistentCalls:
         m_Calls: []
+    audioClip: {fileID: 8300000, guid: f2957afdb3cba3545b63cdc796f95ec9, type: 3}
+  - text: Enjoy the sea Mr.Sato!
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    audioClip: {fileID: 0}

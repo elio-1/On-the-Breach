@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+
 [System.Serializable]
-public class DialogueString
+public class DialogueString 
 {
     public string text;
     public bool isEndOfDialogue; 
@@ -19,5 +20,6 @@ public class DialogueString
     [Header("Trigger Events")]
     public UnityEvent startEvent;
     public UnityEvent endEvent; 
+    public AudioClip audioClip;
 }
 
