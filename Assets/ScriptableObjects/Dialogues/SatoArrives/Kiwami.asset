@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c4059f4072ec74a966577bbc868371, type: 3}
+  m_Name: Kiwami
+  m_EditorClassIdentifier: 
+  pageNumber: 1
+  dialogueStringsList:
+  - text: "There we are Mr.Sato.  Here\u2019s the house you\u2019re gonna stay until
+      the negotiations are done. "
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "There is no transportation in this area, so I will be your driver to the
+      company\u2019s office, in Susami."
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "If you have any technical issue, you can refer to the Janitor, he\u2019s
+      in charge of this place : water, electricity, laundry\u2026"
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "He will also deliver your dinner every evening too, don\u2019t worry though,
+      he is a very kind and discreet person and you should not cross path with him. "
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "He will also deliver your dinner every evening too, don\u2019t worry though,
+      he is a very kind and discreet person and you should not cross path with him. "
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: Tomorrow, he should have you the fax machine installed in the house.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: One last thing Mr.Sato, I advise you not to go on the beach.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: The water sometimes can be rought, particularly in this place. Have a good
+      rest Mr.Sato, I will pick you up at 6:35am tomorrow.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "\u2026Oh, I forgot !  The company had you a little present, it\u2019s
+      on the table. Enjoy the sea Mr.Sato!"
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IsSelectedJumpToIndex: 0
+    option2IsSelectedJumpToIndex: 0
+    startEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
