@@ -36,7 +36,7 @@ MonoBehaviour:
     answerOption2: 
     option1IsSelectedJumpToIndex: 0
     option2IsSelectedJumpToIndex: 0
-    audioClip: {fileID: 8300000, guid: c37a6c3d00d6bc640bdca95f26e3de3d, type: 3}
+    audioClip: {fileID: 0}
   - text: One last thing Mr.Sato, I advise you not to go on the beach. The water
       sometimes can be rought, particularly in this place. Have a good rest Mr.Sato,
       I will pick you up at 6:35am tomorrow.
@@ -46,7 +46,7 @@ MonoBehaviour:
     answerOption2: 
     option1IsSelectedJumpToIndex: 0
     option2IsSelectedJumpToIndex: 0
-    audioClip: {fileID: 8300000, guid: 6384ac6a2e54e404d9c0fe0a0144b75b, type: 3}
+    audioClip: {fileID: 0}
   - text: "\u2026Oh, I forgot !  The company had you a little present, it\u2019s
       on the table. Enjoy the sea Mr.Sato!"
     isEndOfDialogue: 0

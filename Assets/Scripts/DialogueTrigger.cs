@@ -16,7 +16,10 @@ public class DialogueTrigger : MonoBehaviour
     private bool hasAlreadyBeenSaid = false;
     private Player player;
     public AudioSource audioSource;
-    // public bool disableAtTheEnd = false;
+    [Header("Events")]
+    public UnityEvent startEvent;
+    public UnityEvent endEvent;
+
 
     public void OnButtonPress()
     {

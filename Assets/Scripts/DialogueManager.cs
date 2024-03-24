@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] private bool areAudioSylablesRndom = true;
     [SerializeField] private int howmanyLettersAudio = 1;
+    private bool doesThatLineContainAudio = false;
 
     private DialogueTrigger currentDialogueGameobject;
 
@@ -59,6 +60,7 @@ public class DialogueManager : MonoBehaviour
         textPoppa.SetActive(true);
         interactibleObjectList = buttonList;
         currentDialogueGameobject = gameObject.GetComponent<DialogueTrigger>();
+        currentDialogueGameobject.startEvent?.Invoke();
         dialogueList = dialogueString;
         IsButtonListClickable(false, interactibleObjectList);
         currentDialogueIndex = 0;
@@ -70,11 +72,13 @@ public class DialogueManager : MonoBehaviour
     {
         while (currentDialogueIndex < dialogueList.Count)
         {
+            doesThatLineContainAudio = false;
             DialogueString line = dialogueList[currentDialogueIndex];
             StartCoroutine(SpamClickTimer());
             // line.startEvent?.Invoke();
             if (line.audioClip != null){
                 currentDialogueGameobject.PlayAudioClip(line.audioClip);
+                doesThatLineContainAudio = true; 
             }   
             if (line.isQuestion)
             {
@@ -123,16 +127,21 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                if (letterCounter == howmanyLettersAudio)
+                // Audio : dont play audio if SAM is talking
+                if (!doesThatLineContainAudio)
                 {
-                    audioSource.clip = sylableAudioList[indexAudioSylable];
-                    audioSource.Play();
-                    indexAudioSylable = areAudioSylablesRndom ? Random.Range(0, sylableAudioList.Count - 1) : indexAudioSylable += 1 ;
-                    if (indexAudioSylable > sylableAudioList.Count -1)
+                    // Audio : play a sound each char if howmanylettersaudio is set to 1
+                    if (letterCounter == howmanyLettersAudio)
                     {
-                        indexAudioSylable = 0;
+                        audioSource.clip = sylableAudioList[indexAudioSylable];
+                        audioSource.Play();
+                        indexAudioSylable = areAudioSylablesRndom ? Random.Range(0, sylableAudioList.Count - 1) : indexAudioSylable += 1 ;
+                        if (indexAudioSylable > sylableAudioList.Count -1)
+                        {
+                            indexAudioSylable = 0;
+                        }
+                        letterCounter = 0;
                     }
-                    letterCounter = 0;
                 }
                 textHolder.text += letter;
                 yield return new WaitForSeconds(textDisplaySpeed);
@@ -165,6 +174,7 @@ public class DialogueManager : MonoBehaviour
         IsButtonListClickable(true, interactibleObjectList);
         
         currentDialogueGameobject.CanBeTriggeredAgain();
+        currentDialogueGameobject.endEvent?.Invoke();
         currentDialogueGameobject = null;
     }
     private void IsButtonListClickable(bool isClickable, List<Button> buttonList)
