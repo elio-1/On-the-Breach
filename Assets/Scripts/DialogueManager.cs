@@ -8,13 +8,21 @@ using TMPro;
 // handle the dialogues 
 public class DialogueManager : MonoBehaviour
 {
+     [Header("Text")]
     [SerializeField] private GameObject textPoppa;
     [SerializeField] private TMP_Text textHolder;
     // add more buttons options
     [SerializeField] private Button optionButton1;
     [SerializeField] private Button optionButton2;
     [SerializeField] private GameObject buttonHolder;
+     [Header("Text defilement")]
     [SerializeField] private float textDisplaySpeed = 0.09f;
+    [SerializeField] private float spamClickTimer = 0.1f;
+    [Header("Audio")]
+    [SerializeField] List<AudioClip> sylableAudioList = new List<AudioClip>();
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] private bool areAudioSylablesRndom = true;
+    [SerializeField] private int howmanyLettersAudio = 1;
 
     private DialogueTrigger currentDialogueGameobject;
 
@@ -25,6 +33,8 @@ public class DialogueManager : MonoBehaviour
 
     private bool optionSelected = false;
     private bool instantTextDisplay = false;
+    private bool instantTextDisplayCD = false;
+    
 
     private void Start()
     {
@@ -34,9 +44,13 @@ public class DialogueManager : MonoBehaviour
     private void Update()
     {
         // display the text instaniously if input from player
+        
         if(Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
         {
-            instantTextDisplay = !instantTextDisplay;
+            if (instantTextDisplayCD)
+            { 
+                instantTextDisplay = !instantTextDisplay;
+            }
         }
     }
 
@@ -57,7 +71,8 @@ public class DialogueManager : MonoBehaviour
         while (currentDialogueIndex < dialogueList.Count)
         {
             DialogueString line = dialogueList[currentDialogueIndex];
-            line.startEvent?.Invoke();
+            StartCoroutine(SpamClickTimer());
+            // line.startEvent?.Invoke();
             if (line.audioClip != null){
                 currentDialogueGameobject.PlayAudioClip(line.audioClip);
             }   
@@ -79,7 +94,7 @@ public class DialogueManager : MonoBehaviour
             {
                 yield return StartCoroutine(TypeText(line.text));
             }
-            line.endEvent?.Invoke();
+            // line.endEvent?.Invoke();
             optionSelected = false;
         }
     
@@ -96,15 +111,29 @@ public class DialogueManager : MonoBehaviour
     // type each char in the current line in the dialogue
     private IEnumerator TypeText(string lineText)
     {
+        int indexAudioSylable = 0;
+        int letterCounter = 0;
         textHolder.text = "";
         foreach (char letter in lineText.ToCharArray())
         {
+            letterCounter += 1;
             if (instantTextDisplay)
             {
                 textHolder.text += letter;
             }
             else
             {
+                if (letterCounter == howmanyLettersAudio)
+                {
+                    audioSource.clip = sylableAudioList[indexAudioSylable];
+                    audioSource.Play();
+                    indexAudioSylable = areAudioSylablesRndom ? Random.Range(0, sylableAudioList.Count - 1) : indexAudioSylable += 1 ;
+                    if (indexAudioSylable > sylableAudioList.Count -1)
+                    {
+                        indexAudioSylable = 0;
+                    }
+                    letterCounter = 0;
+                }
                 textHolder.text += letter;
                 yield return new WaitForSeconds(textDisplaySpeed);
             }
@@ -144,5 +173,12 @@ public class DialogueManager : MonoBehaviour
         {
             button.interactable = isClickable;
         }
+    }
+
+    private IEnumerator SpamClickTimer()
+    {
+        instantTextDisplayCD = false;
+        yield return new WaitForSeconds(spamClickTimer);
+        instantTextDisplayCD = true;
     }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Events;
+// using UnityEngine.Events;
 
 
 [System.Serializable]
@@ -16,10 +16,11 @@ public class DialogueString
     public int option1IsSelectedJumpToIndex;
     public int option2IsSelectedJumpToIndex;
 
-    // Events
-    [Header("Trigger Events")]
-    public UnityEvent startEvent;
-    public UnityEvent endEvent; 
+    // // Events
+    // [Header("Trigger Events")]
+    // public UnityEvent startEvent;
+    // public UnityEvent endEvent; 
+     [Header("Associated Audio")]
     public AudioClip audioClip;
 }
 
