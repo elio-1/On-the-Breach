@@ -52,8 +52,27 @@ MonoBehaviour:
   optionButton1: {fileID: 0}
   optionButton2: {fileID: 0}
   buttonHolder: {fileID: 0}
-  textDisplaySpeed: 0.05
-  sylableAudioList: []
+  textDisplaySpeed: 0.09
+  spamClickTimer: 1
+  sylableAudioList:
+  - {fileID: 8300000, guid: 4d4f715cdcb3b8d43885b64a236846f4, type: 3}
+  - {fileID: 8300000, guid: 4d4f715cdcb3b8d43885b64a236846f4, type: 3}
+  - {fileID: 8300000, guid: 9a5830a8a3dc466498a30f121282c64e, type: 3}
+  - {fileID: 8300000, guid: b49e3326f24e06a4fbe757af35e7a184, type: 3}
+  - {fileID: 8300000, guid: 0c707cdf133c3cb4aa51f22ec1717cfb, type: 3}
+  - {fileID: 8300000, guid: e5038c22fb05b3748b4d15f8938cfa2d, type: 3}
+  - {fileID: 8300000, guid: 996effa380590da4a85e3a5de3c4caf9, type: 3}
+  - {fileID: 8300000, guid: 3e72d6a3aa8f7f34cbb25f9f008d0c50, type: 3}
+  - {fileID: 8300000, guid: 82311dd88fb9eaf44959d234223cd363, type: 3}
+  - {fileID: 8300000, guid: 995d541e167070441a8e2720a4a326b5, type: 3}
+  - {fileID: 8300000, guid: e7ebd4a81b364db438a2178d221ba0e5, type: 3}
+  - {fileID: 8300000, guid: 96cf93dd32278784cb67a187fec94492, type: 3}
+  - {fileID: 8300000, guid: e1e3af12ce3680e419c9206984eb8d7b, type: 3}
+  - {fileID: 8300000, guid: 07470320ed1f1c64f9d7759f5cfd05a1, type: 3}
+  - {fileID: 8300000, guid: da84acd62f107944598f00c26bde804f, type: 3}
+  audioSource: {fileID: 7993605335623458557}
+  areAudioSylablesRndom: 1
+  howmanyLettersAudio: 2
 --- !u!114 &4945278304821890845
 MonoBehaviour:
   m_ObjectHideFlags: 0

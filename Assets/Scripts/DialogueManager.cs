@@ -8,13 +8,13 @@ using TMPro;
 // handle the dialogues 
 public class DialogueManager : MonoBehaviour
 {
-     [Header("Text")]
+     [Header("Text Holder")]
     [SerializeField] private GameObject textPoppa;
-    [SerializeField] private TMP_Text textHolder;
-    // add more buttons options
-    [SerializeField] private Button optionButton1;
-    [SerializeField] private Button optionButton2;
-    [SerializeField] private GameObject buttonHolder;
+    private TextWindow textWindow;
+    private TMP_Text textHolder;
+    private Button optionButton1;
+    private Button optionButton2;
+    private GameObject buttonHolder;
      [Header("Text defilement")]
     [SerializeField] private float textDisplaySpeed = 0.09f;
     [SerializeField] private float spamClickTimer = 0.1f;
@@ -39,7 +39,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        textPoppa.SetActive(false);
+        
     }
 
     private void Update()
@@ -55,11 +55,21 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // this function is called by DialogueTrigger which is attach to a gameobject in the scene and a trigger
     public void DialogueStart(List<DialogueString> dialogueString, List<Button> buttonList, GameObject gameObject)
     {
-        textPoppa.SetActive(true);
         interactibleObjectList = buttonList;
         currentDialogueGameobject = gameObject.GetComponent<DialogueTrigger>();
+        // change the textPoppa if the Dialogue trigger has a special one for cool effects
+        if(currentDialogueGameobject.textWindow != null)
+        {
+            textPoppa = currentDialogueGameobject.textWindow;
+        }
+        
+        textWindow = textPoppa.GetComponent<TextWindow>();  
+        SetTextHolderVar(textWindow);
+        textPoppa.SetActive(true);
+
         currentDialogueGameobject.startEvent?.Invoke();
         dialogueList = dialogueString;
         IsButtonListClickable(false, interactibleObjectList);
@@ -72,14 +82,18 @@ public class DialogueManager : MonoBehaviour
     {
         while (currentDialogueIndex < dialogueList.Count)
         {
-            doesThatLineContainAudio = false;
             DialogueString line = dialogueList[currentDialogueIndex];
+
+            instantTextDisplayCD = false;
             StartCoroutine(SpamClickTimer());
-            // line.startEvent?.Invoke();
+
+            // check if this line contain audio, if it does, play it instead of the sylable audio
+            doesThatLineContainAudio = false;
             if (line.audioClip != null){
                 currentDialogueGameobject.PlayAudioClip(line.audioClip);
                 doesThatLineContainAudio = true; 
             }   
+
             if (line.isQuestion)
             {
                 yield return StartCoroutine(TypeText(line.text));
@@ -130,12 +144,13 @@ public class DialogueManager : MonoBehaviour
                 // Audio : dont play audio if SAM is talking
                 if (!doesThatLineContainAudio)
                 {
-                    // Audio : play a sound each char if howmanylettersaudio is set to 1
+                    // Audio : play a sound each char if howmanyLettersAudio is set to 1
                     if (letterCounter == howmanyLettersAudio)
                     {
                         audioSource.clip = sylableAudioList[indexAudioSylable];
                         audioSource.Play();
-                        indexAudioSylable = areAudioSylablesRndom ? Random.Range(0, sylableAudioList.Count - 1) : indexAudioSylable += 1 ;
+                        // if 
+                        indexAudioSylable = areAudioSylablesRndom ? Random.Range(0, sylableAudioList.Count - 1) : indexAudioSylable++ ;
                         if (indexAudioSylable > sylableAudioList.Count -1)
                         {
                             indexAudioSylable = 0;
@@ -147,14 +162,17 @@ public class DialogueManager : MonoBehaviour
                 yield return new WaitForSeconds(textDisplaySpeed);
             }
         } 
+        
         if (!dialogueList[currentDialogueIndex].isQuestion)
         {
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"));
         }
+
         if (dialogueList[currentDialogueIndex].isEndOfDialogue)
         {
             DialogueStop();
         }
+
         currentDialogueIndex++;
     } 
 
@@ -190,5 +208,12 @@ public class DialogueManager : MonoBehaviour
         instantTextDisplayCD = false;
         yield return new WaitForSeconds(spamClickTimer);
         instantTextDisplayCD = true;
+    }
+    private void SetTextHolderVar(TextWindow textWindow)
+    {
+    textHolder = textWindow.textHolder;
+    optionButton1 = textWindow.optionButton1;
+    optionButton2 = textWindow.optionButton2;
+    buttonHolder = textWindow.buttonHolder;
     }
 }

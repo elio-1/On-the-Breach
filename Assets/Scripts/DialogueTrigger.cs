@@ -7,10 +7,13 @@ using UnityEngine.UI;
 // Define the conditions in which a dialogue start
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Dialogue and player Ref")]
     [SerializeField] private DialogueStringSO dialogueStringsSO;
     [SerializeField] private GameObject playerGameObject;
+    [Header("Start and tigger opt")]
     [SerializeField] private bool isTriggeredOnStart;
     [SerializeField] private bool canBeTriggeredMultipleTimes;
+    [SerializeField] private bool isActiveAtStart = false;
     private GameManager gameManager;
     public List<Button> buttonsToDisable = new List<Button>() ;
     private bool hasAlreadyBeenSaid = false;
@@ -19,6 +22,8 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Events")]
     public UnityEvent startEvent;
     public UnityEvent endEvent;
+    [Header("Optional text window")]
+    public GameObject textWindow;
 
 
     public void OnButtonPress()
@@ -33,6 +38,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     void Start()
     {
+        gameObject.SetActive(isActiveAtStart);
         if(isTriggeredOnStart)
         {
             StartTheDialogue();
@@ -45,6 +51,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(!hasAlreadyBeenSaid)
             {
+                gameObject.SetActive(true);
                 playerGameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStringsSO.dialogueStringsList, buttonsToDisable, gameObject);
                 hasAlreadyBeenSaid = true;
             }
@@ -68,7 +75,10 @@ public class DialogueTrigger : MonoBehaviour
 
     public void PlayAudioClip(AudioClip audioClip)
     {
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        if(audioClip != null)
+        {
+            audioSource.clip = audioClip;
+            audioSource.Play();
+        }
     }
 }
