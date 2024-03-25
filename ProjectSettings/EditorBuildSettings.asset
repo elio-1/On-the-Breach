@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SatoHouseMainRoom.unity
     guid: 7c286861cfeb73a48a83f5f018d256f7
+  - enabled: 1
+    path: Assets/Scenes/SatoBedroom.unity
+    guid: 63cb30186cdeae745877cebc97dd2a19
   m_configObjects: {}
