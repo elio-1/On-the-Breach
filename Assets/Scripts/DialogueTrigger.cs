@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 // Define the conditions in which a dialogue start
 public class DialogueTrigger : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         gameObject.SetActive(isActiveAtStart);
         if(isTriggeredOnStart)
         {
