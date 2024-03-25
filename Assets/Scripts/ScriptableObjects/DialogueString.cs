@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class DialogueString 
 {
+    [TextArea(3,10)]
     public string text;
     public bool isEndOfDialogue; 
 

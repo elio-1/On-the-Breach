@@ -37,13 +37,12 @@ public class GameManager : MonoBehaviour
 
     public void ChangeLevel(string sceneName)
     {
-        if (int.TryParse(sceneName, out int sceneIndex))
-        {
-            SceneManager.LoadScene(sceneIndex);
-        }
-        else if (sceneName == "+1")
+        if (sceneName == "+1")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }else if (int.TryParse(sceneName, out int sceneIndex))
+        {
+            SceneManager.LoadScene(sceneIndex);
         }else
         {
             SceneManager.LoadScene(sceneName);
