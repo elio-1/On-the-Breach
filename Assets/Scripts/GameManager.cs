@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+UnityEngine.SceneManagement
 
 public class GameManager : MonoBehaviour
 {
@@ -32,5 +33,20 @@ public class GameManager : MonoBehaviour
     public DialogueStringSO ChangeDialogueStringSO(int page){
         ChangePageNumber(page);
         return dialogueStringList[page];
+    }
+
+    public void ChangeLevel(string sceneName)
+    {
+        if (int.TryParse(sceneName, out int sceneIndex))
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
+        else if (sceneName == "+1")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
