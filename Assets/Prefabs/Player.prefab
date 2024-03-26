@@ -48,10 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPoppa: {fileID: 0}
-  textHolder: {fileID: 0}
-  optionButton1: {fileID: 0}
-  optionButton2: {fileID: 0}
-  buttonHolder: {fileID: 0}
   textDisplaySpeed: 0.09
   spamClickTimer: 1
   sylableAudioList:
@@ -94,15 +90,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8412098405979693883}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe98de7ce3313d4458f198a1adf1b84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-  - {fileID: 11400000, guid: 4bffdb05771c66f49b34e11e163143bc, type: 2}
-  - {fileID: 11400000, guid: f8b51ad1e8c484d46ba53ebc8527b1cd, type: 2}
-  - {fileID: 11400000, guid: d00928a82dcfd0a49b206b4842359533, type: 2}
+  inventory: []
   inventoryUI: {fileID: 0}
 --- !u!82 &7993605335623458557
 AudioSource:
