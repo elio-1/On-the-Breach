@@ -195,6 +195,7 @@ public class DialogueManager : MonoBehaviour
         IsButtonListClickable(true, interactibleObjectList);
         
         currentDialogueGameobject.CanBeTriggeredAgain();
+        
         currentDialogueGameobject.endEvent?.Invoke();
         currentDialogueGameobject = null;
     }
