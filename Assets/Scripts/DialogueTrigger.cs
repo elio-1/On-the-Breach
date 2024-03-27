@@ -10,8 +10,12 @@ public class DialogueTrigger : MonoBehaviour
 {
     [Header("Dialogue and player Ref")]
     [SerializeField] private DialogueStringSO dialogueStringsSO;
-    [SerializeField] private List<DialogueStringSO> optionalDialoguesSO = new List<DialogueStringSO>();
     [SerializeField] private GameObject playerGameObject;
+
+    [Header("Optional Dialogues")]
+    [SerializeField] private List<DialogueStringSO> optionalDialoguesSO = new List<DialogueStringSO>();
+    [SerializeField] private bool lockOnLastOptionalDialogue = false;
+
     [Header("Start and tigger opt")]
     [SerializeField] private bool isTriggeredOnStart;
     // can be triggered multiple time only repeat the first dialoguestring not the optional one
@@ -36,6 +40,19 @@ public class DialogueTrigger : MonoBehaviour
         if (!hasAlreadyBeenSaid || canBeTriggeredMultipleTimes)
         {
             StartTheDialogue(dialogueStringsSO.dialogueStringsList);
+        }
+        else if (optionalDialoguesSO != null)
+        {
+            StartTheDialogue(optionalDialoguesSO[optionalDialoguesCounter].dialogueStringsList);
+            optionalDialoguesCounter++;
+            if (optionalDialoguesCounter >= optionalDialoguesSO.Count)
+            {
+                optionalDialoguesCounter = 0;
+                if (lockOnLastOptionalDialogue)
+                {
+                    optionalDialoguesCounter = optionalDialoguesSO.Count - 1;
+                }
+            }
         }
         StoryProgress();
     }

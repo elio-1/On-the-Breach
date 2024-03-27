@@ -14,14 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageNumber: 0
   dialogueStringsList:
-  - text: That's the present Salami boy left me, seem like it's alcool!
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    option1IsSelectedJumpToIndex: 0
-    option2IsSelectedJumpToIndex: 0
-    audioClip: {fileID: 0}
   - text: I dont feel like drinking right now
     isEndOfDialogue: 0
     isQuestion: 0

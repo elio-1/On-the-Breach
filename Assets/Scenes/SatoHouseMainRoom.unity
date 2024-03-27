@@ -372,8 +372,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueStringsSO: {fileID: 11400000, guid: ece26058b9a424946a8a92853c905bca, type: 2}
   playerGameObject: {fileID: 498702208}
+  optionalDialoguesSO:
+  - {fileID: 11400000, guid: 1ab709028572403429a48c4c2223705a, type: 2}
+  - {fileID: 11400000, guid: e32de33ac1c421f48b5a1454cb146e47, type: 2}
+  lockOnLastOptionalDialogue: 1
   isTriggeredOnStart: 0
-  canBeTriggeredMultipleTimes: 1
+  canBeTriggeredMultipleTimes: 0
   isActiveAtStart: 0
   buttonsToDisable: []
   audioSource: {fileID: 394773805}
@@ -730,6 +734,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueStringsSO: {fileID: 11400000, guid: f6714aa0ab6105a46b6a92b32f277332, type: 2}
   playerGameObject: {fileID: 498702208}
+  optionalDialoguesSO: []
+  lockOnLastOptionalDialogue: 0
   isTriggeredOnStart: 0
   canBeTriggeredMultipleTimes: 1
   isActiveAtStart: 0
@@ -938,6 +944,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueStringsSO: {fileID: 11400000, guid: 3a69821ab78827948915a053f1652a22, type: 2}
   playerGameObject: {fileID: 498702208}
+  optionalDialoguesSO: []
+  lockOnLastOptionalDialogue: 0
   isTriggeredOnStart: 0
   canBeTriggeredMultipleTimes: 1
   isActiveAtStart: 0
@@ -1780,6 +1788,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueStringsSO: {fileID: 11400000, guid: 584ae985bac14c042affe24bb6b4977c, type: 2}
   playerGameObject: {fileID: 498702208}
+  optionalDialoguesSO: []
+  lockOnLastOptionalDialogue: 0
   isTriggeredOnStart: 0
   canBeTriggeredMultipleTimes: 1
   isActiveAtStart: 0
@@ -2020,6 +2030,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueStringsSO: {fileID: 11400000, guid: 5d711ba5243bee64a87bdc2038557f23, type: 2}
   playerGameObject: {fileID: 498702208}
+  optionalDialoguesSO: []
+  lockOnLastOptionalDialogue: 0
   isTriggeredOnStart: 0
   canBeTriggeredMultipleTimes: 1
   isActiveAtStart: 0
