@@ -65,15 +65,18 @@ public class DialogueManager : MonoBehaviour
         {
             textPoppa = currentDialogueGameobject.textWindow;
         }
-        
+        // Set the text box and variables
         textWindow = textPoppa.GetComponent<TextWindow>();  
         SetTextHolderVar(textWindow);
         textPoppa.SetActive(true);
 
         currentDialogueGameobject.startEvent?.Invoke();
-        dialogueList = dialogueString;
-        IsButtonListClickable(false, interactibleObjectList);
+
+        // check if the SO is for an object or a dialogue
         currentDialogueIndex = 0;
+        dialogueList = dialogueString;
+
+        IsButtonListClickable(false, interactibleObjectList);
         DisplayAnswerButtons(false);
         StartCoroutine(DisplayDialogue());
     }
