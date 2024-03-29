@@ -33,26 +33,29 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Optional text window")]
     public GameObject textWindow;
     private DialogueManager dialogueManager;
+    [Header("Item Conditional Triggers")]
+    [SerializeField] private ItemSO itemRequired;
+    [SerializeField] private DialogueStringSO itemRequiredDialogues;
+    public bool isRepeatableItemInteraction;
+    public UnityEvent startItemEvent;
+    public UnityEvent endItemEvent;
+    [HideInInspector] public bool isItemCondActive = false;
+    
 
 
     public void OnButtonPress()
     {
-        if (!hasAlreadyBeenSaid || canBeTriggeredMultipleTimes)
+        if (itemRequired != null && DoesPlayerHabThis(itemRequired))
+        {
+            StartItemSpecificDialogue();
+        }
+        else if (!hasAlreadyBeenSaid || canBeTriggeredMultipleTimes)
         {
             StartTheDialogue(dialogueStringsSO.dialogueStringsList);
         }
         else if (optionalDialoguesSO != null)
         {
-            StartTheDialogue(optionalDialoguesSO[optionalDialoguesCounter].dialogueStringsList);
-            optionalDialoguesCounter++;
-            if (optionalDialoguesCounter >= optionalDialoguesSO.Count)
-            {
-                optionalDialoguesCounter = 0;
-                if (lockOnLastOptionalDialogue)
-                {
-                    optionalDialoguesCounter = optionalDialoguesSO.Count - 1;
-                }
-            }
+            OptionalDialogues();
         }
         StoryProgress();
     }
@@ -103,5 +106,28 @@ public class DialogueTrigger : MonoBehaviour
             audioSource.clip = audioClip;
             audioSource.Play();
         }
+    }
+    private void StartItemSpecificDialogue()
+    {
+        isItemCondActive = true;
+        StartTheDialogue(itemRequiredDialogues.dialogueStringsList);
+    }
+    private void OptionalDialogues()
+    {
+        StartTheDialogue(optionalDialoguesSO[optionalDialoguesCounter].dialogueStringsList);
+            optionalDialoguesCounter++;
+            if (optionalDialoguesCounter >= optionalDialoguesSO.Count)
+            {
+                optionalDialoguesCounter = 0;
+                if (lockOnLastOptionalDialogue && optionalDialoguesSO.Count > 0)
+                {
+                    optionalDialoguesCounter = optionalDialoguesSO.Count - 1;
+                }
+            }
+    }
+    private bool DoesPlayerHabThis(ItemSO item)
+    {
+        InventoryManager playerInventory = playerGameObject.GetComponent<InventoryManager>();
+        return playerInventory.inventory.Contains(item);
     }
 }

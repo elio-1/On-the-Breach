@@ -70,7 +70,14 @@ public class DialogueManager : MonoBehaviour
         SetTextHolderVar(textWindow);
         textPoppa.SetActive(true);
 
-        currentDialogueGameobject.startEvent?.Invoke();
+        if(currentDialogueGameobject.isItemCondActive)
+        {
+            currentDialogueGameobject.startItemEvent?.Invoke();
+        }
+        else
+        {
+            currentDialogueGameobject.startEvent?.Invoke();
+        }
 
         // check if the SO is for an object or a dialogue
         currentDialogueIndex = 0;
@@ -80,7 +87,7 @@ public class DialogueManager : MonoBehaviour
         DisplayAnswerButtons(false);
         StartCoroutine(DisplayDialogue());
     }
-
+#region DisplayDialogue
     private IEnumerator DisplayDialogue()
     {
         while (currentDialogueIndex < dialogueList.Count)
@@ -178,7 +185,7 @@ public class DialogueManager : MonoBehaviour
 
         currentDialogueIndex++;
     } 
-
+#endregion
     // Navigate in the current dialogue to the right dialogue line 
     private void HandleOptionSelected(int jumpIndex)
     {
@@ -195,8 +202,15 @@ public class DialogueManager : MonoBehaviour
         IsButtonListClickable(true, interactibleObjectList);
         
         currentDialogueGameobject.CanBeTriggeredAgain();
-        
-        currentDialogueGameobject.endEvent?.Invoke();
+
+        if(currentDialogueGameobject.isItemCondActive)
+        {
+            currentDialogueGameobject.endItemEvent?.Invoke();
+        }
+        else
+        {
+            currentDialogueGameobject.endEvent?.Invoke();
+        }
         currentDialogueGameobject = null;
     }
     private void IsButtonListClickable(bool isClickable, List<Button> buttonList)
