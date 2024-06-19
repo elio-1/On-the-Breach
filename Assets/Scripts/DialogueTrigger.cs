@@ -13,7 +13,10 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private GameObject playerGameObject;
 
     [Header("Optional Dialogues")]
+    [Tooltip("Dialogue that will trigger after the main dialogue is over, can be used to cycle new object descriptions")]
+
     [SerializeField] private List<DialogueStringSO> optionalDialoguesSO = new List<DialogueStringSO>();
+    [Tooltip("set to true if you want that the last dialogue to repeat")]
     [SerializeField] private bool lockOnLastOptionalDialogue = false;
 
     [Header("Start and tigger opt")]
@@ -33,7 +36,7 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Optional text window")]
     public GameObject textWindow;
     private DialogueManager dialogueManager;
-    [Header("Item Conditional Triggers")]
+    [Header("Item Conditional Triggers"), Tooltip("Dialogue that will trigger if the player has the required item in his inventory")]
     [SerializeField] private ItemSO itemRequired;
     [SerializeField] private DialogueStringSO itemRequiredDialogues;
     public bool isRepeatableItemInteraction;

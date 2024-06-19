@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerData playerData = SaveSystem.LoadPlayer();
         player.storyProgress = playerData.storyProgress;
+        player.inventory = playerData.inventory;
     }
     public void NewGame()
     {
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeLevel(string sceneName)
     {
+        SavePlayer();
         if (sceneName == "+1")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -47,5 +49,13 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
         }
+    }
+
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
+    {
+        LoadPlayer();
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-// save the player data in a binary file
+// save the player data in a binary file and then load it back if needed
 public static class SaveSystem 
 {
     public static void SavePlayer(Player player)

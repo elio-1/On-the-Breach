@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;  
 using UnityEngine.SceneManagement;
 
-
+// this player is the one attatch to a game object in the sccene
 public class Player : MonoBehaviour
 {
     // at what page in the story the player is
     public int storyProgress = 0;
     public int currentScene = 0;
-
+    public List<string> inventory = new List<string>(); 
     
     private void Awake() {
         currentScene = SceneManager.GetActiveScene().buildIndex;

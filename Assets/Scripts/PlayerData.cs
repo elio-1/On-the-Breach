@@ -8,9 +8,11 @@ public class PlayerData
 {
     public int storyProgress;
     public int currentScene;
+    public List<string> inventory = new List<string>(); 
     public PlayerData(Player player)
     {
         storyProgress = player.storyProgress;
         currentScene = player.currentScene;
+        inventory = player.inventory;
     }
 }
