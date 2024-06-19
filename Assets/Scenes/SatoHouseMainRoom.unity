@@ -2086,10 +2086,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 498702209}
-    - target: {fileID: 3190533261703064978, guid: 59a81615676337742bb7982105a8191c, type: 3}
-      propertyPath: dialogueStringList.Array.size
-      value: 0
+    - target: {fileID: 3193654735100959812, guid: 59a81615676337742bb7982105a8191c, type: 3}
+      propertyPath: uIInventory
+      value: 
+      objectReference: {fileID: 6539196533556360910}
+    - target: {fileID: 3193654735100959812, guid: 59a81615676337742bb7982105a8191c, type: 3}
+      propertyPath: AvailableItems.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3193654735100959812, guid: 59a81615676337742bb7982105a8191c, type: 3}
+      propertyPath: AvailableItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c69862f61023834d960289fbe122efd, type: 2}
+    - target: {fileID: 3193654735100959812, guid: 59a81615676337742bb7982105a8191c, type: 3}
+      propertyPath: AvailableItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: cd46e4b81d9a9c64eae8773656f048a2, type: 2}
     - target: {fileID: 3891330583212694974, guid: 59a81615676337742bb7982105a8191c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 447.24353

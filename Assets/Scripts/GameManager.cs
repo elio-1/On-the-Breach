@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public Player player;
     public List<DialogueStringSO> dialogueStringList = new List<DialogueStringSO>();
+    public InventoryHelperStringToSO inventoryHelperStringToSO;
     
     public void SavePlayer()
     {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerData playerData = SaveSystem.LoadPlayer();
         player.storyProgress = playerData.storyProgress;
+        // list of string with the item name
         player.inventory = playerData.inventory;
     }
     public void NewGame()
@@ -51,11 +53,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void LoadInventory()
+    {
+        // i want to give this data playerData.inventory
+        Debug.Log("Loading player data");
+        inventoryHelperStringToSO.StringToItemSO(player.inventory);
+        
+    }
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake()
     {
         LoadPlayer();
+        //load inventory from player data!
+        LoadInventory();
     }
 }

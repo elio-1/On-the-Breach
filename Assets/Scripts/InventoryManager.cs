@@ -10,4 +10,5 @@ public class InventoryManager : MonoBehaviour
     {
         inventoryUI.GenerateInventory(inventory);
     }
+    
 }
