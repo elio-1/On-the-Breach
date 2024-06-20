@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(player);
+        LoadInventory();
     }
     public void LoadPlayer()
     {
@@ -19,10 +20,22 @@ public class GameManager : MonoBehaviour
         player.storyProgress = playerData.storyProgress;
         // list of string with the item name
         player.inventory = playerData.inventory;
+        Debug.Log("Player inv: " + player.inventory.Count + "player inv (in data): " + playerData.inventory.Count);
+        
     }
     public void NewGame()
     {
-        player.storyProgress = 0;
+        PlayerData playerData = SaveSystem.LoadPlayer();
+        playerData.storyProgress = 0;
+        Debug.Log("clearing inv...");
+        player.inventory.Clear();
+        playerData.inventory.Clear();
+        // Debug.Log(player.inventory.Count);
+        playerData.inventory = player.inventory; 
+        Debug.Log(playerData.inventory.Count);
+        SavePlayer();
+        LoadPlayer();
+        LoadInventory();
     }
 
     // change the page number of the player
@@ -56,7 +69,7 @@ public class GameManager : MonoBehaviour
     private void LoadInventory()
     {
         // i want to give this data playerData.inventory
-        Debug.Log("Loading player data");
+        // Debug.Log("Loading player data");
         inventoryHelperStringToSO.StringToItemSO(player.inventory);
         
     }

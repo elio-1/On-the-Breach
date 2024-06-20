@@ -21,4 +21,9 @@ public class Player : MonoBehaviour
     {
         storyProgress += 1;
     }
+
+    public void AddItem(ItemSO itemSo)
+    {
+        inventory.Add(itemSo.itemName);
+    }
 }

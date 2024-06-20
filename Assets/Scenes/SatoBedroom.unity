@@ -1206,6 +1206,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8412098405979693883, guid: d01792ce0ff8e664c898e936c3b685a5, type: 3}
   m_PrefabInstance: {fileID: 1062325116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1062325119 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6899081914331836845, guid: d01792ce0ff8e664c898e936c3b685a5, type: 3}
+  m_PrefabInstance: {fileID: 1062325116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062325118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe98de7ce3313d4458f198a1adf1b84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1092531688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1270,6 +1281,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2662782839063309775, guid: fcd2663a96e02434db48f67bcb47bfdd, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 1062325119}
     - target: {fileID: 4330675241693852898, guid: fcd2663a96e02434db48f67bcb47bfdd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2119,13 +2134,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1099236292}
-        m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
-        m_MethodName: AddItemToInventory
+      - m_Target: {fileID: 1062325117}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: AddItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: cd46e4b81d9a9c64eae8773656f048a2, type: 2}
           m_ObjectArgumentAssemblyTypeName: ItemSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1455337605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: SavePlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2402,9 +2429,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1062325117}
     - target: {fileID: 3193654735100959812, guid: 59a81615676337742bb7982105a8191c, type: 3}
-      propertyPath: uIInventory
+      propertyPath: inventoryManager
       value: 
-      objectReference: {fileID: 1099236292}
+      objectReference: {fileID: 1062325119}
     - target: {fileID: 3891330583212694974, guid: 59a81615676337742bb7982105a8191c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 447.24353

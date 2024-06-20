@@ -60,5 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2434129e7d01250459205033e0bee1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AvailableItems: []
-  uIInventory: {fileID: 0}
+  AvailableItems:
+  - {fileID: 11400000, guid: 4c69862f61023834d960289fbe122efd, type: 2}
+  - {fileID: 11400000, guid: cd46e4b81d9a9c64eae8773656f048a2, type: 2}
+  inventoryManager: {fileID: 0}

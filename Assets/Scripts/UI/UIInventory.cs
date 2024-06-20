@@ -6,7 +6,8 @@ public class UIInventory : MonoBehaviour
 {
     [SerializeField] UIInvetoryItem itemPrefab;
     [SerializeField] RectTransform rectTransform;
-    List<UIInvetoryItem> itemsList = new List<UIInvetoryItem>();
+    public List<UIInvetoryItem> itemsList = new List<UIInvetoryItem>();
+    [SerializeField] InventoryManager inventoryManager;
     bool isInventoryActive = false;
 
     // needs to be ACTIVE in scene in order to generate
@@ -36,11 +37,15 @@ public class UIInventory : MonoBehaviour
         {
             ToggleInventory();
         }
+        
         UIInvetoryItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
         uiItem.InitializeItem(item);
         uiItem.transform.SetParent(rectTransform);
         uiItem.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         itemsList.Add(uiItem);
+        inventoryManager.AddItem(item);
         ToggleInventory();
     }
+
+    
 }
